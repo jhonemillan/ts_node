@@ -1,0 +1,47 @@
+{
+  "name": "ts_nodejs",
+  "version": "1.0.0",
+  "description": "nodejs with typescript",
+  "main": "server.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node server.ts",
+    "start": "./node_modules/.bin/ts-node ./src/server.ts",
+    "prod": "npm run build && npm run start",
+    "watch-server": "nodemon --watch 'src/**' -e ts,tsx --exec ts-node ./src/server.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhonemillan/ts_node.git"
+  },
+  "keywords": [
+    "node",
+    "ts"
+  ],
+  "author": "jemillan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jhonemillan/ts_node/issues"
+  },
+  "homepage": "https://github.com/jhonemillan/ts_node#readme",
+  "devDependencies": {
+    "typescript": "^3.3.3"
+  },
+  "dependencies": {
+    "@koa/cors": "^2.2.3",
+    "@types/express": "^4.16.1",
+    "@types/koa": "^2.0.48",
+    "@types/koa-router": "^7.0.39",
+    "@types/node": "^11.9.3",
+    "express": "^4.16.4",
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-helmet": "^4.0.0",
+    "koa-router": "^7.4.0",
+    "nodemon": "^1.18.10",
+    "pg": "^7.8.0",
+    "reflect-metadata": "^0.1.13",
+    "ts-node": "^8.0.2",
+    "typeorm": "^0.2.13"
+  }
+}
