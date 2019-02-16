@@ -1,9 +1,16 @@
-{"compilerOptions": {
-        "lib": ["es5", "es6"],
+{
+    "compilerOptions": 
+    {
+        "lib": ["es5", "es6", "es2017"],
         "target": "es6",
         "module": "commonjs",
         "moduleResolution": "node",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "sourceMap": true
-    }}
+        "sourceMap": true,
+        "baseUrl": "./src",
+        "resolveJsonModule": true       
+       
+    },
+    "compileOnSave": false
+}

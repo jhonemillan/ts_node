@@ -1,13 +1,18 @@
 import * as Koa from 'koa';
 import * as Router from 'koa-router';
 import "reflect-metadata";
-import * as cors from '@koa/cors';
+import { postgresDB } from 'db/connection';
+
+let cors = require('@koa/cors');
+let logger = require('koa-logger');
 
 const app = new Koa();
 const router = new Router();
 const PORT:number = Number(process.env.PORT) || 3000;
 
 app.use(cors());
+app.use(logger());
+app.use(router.routes());
 
 app.use(async (ctx, next)=>{
   try {
@@ -21,11 +26,10 @@ app.use(async (ctx, next)=>{
 });
 
 router.get('/*', async (ctx) => {
-    ctx.body = 'Hello World JS!';
+    ctx.body = 'Hello World JSk!';
 });
 
-app.use(router.routes());
 
 app.listen(PORT);
-console.log('Server running on port 3000');
+console.log('Server running on port', PORT);
 
