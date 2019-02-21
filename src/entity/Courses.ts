@@ -1,8 +1,9 @@
 import {BaseEntity,Column,Entity,Index,JoinColumn,JoinTable,ManyToMany,ManyToOne,OneToMany,OneToOne,PrimaryColumn,PrimaryGeneratedColumn,RelationId} from "typeorm";
 import {Lessons} from "./Lessons";
 
-
-@Entity("Courses",{schema:"public"})
+//The name in @Entity decorator must be equal to name in DB, 
+//else, this will cause an error related to relations
+@Entity('Courses')
 export class Courses {
 
     @PrimaryGeneratedColumn({

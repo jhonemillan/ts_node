@@ -1,15 +1,12 @@
 let  postgres_config = 
       {
-        "name": "default",
+        "name": "local",
         "type": "postgres",
         "host": "localhost",
         "port": 5432,
         "username": "jhon",
         "password": "admin",
-        "database": "typescript",
-        "schema": "public",
-        "synchronize": false,
-        "entities": ["entities/*.js"]
+        "database": "typescript"             
       }
 
 export { postgres_config }
