@@ -1,8 +1,6 @@
 import { createConnection, Connection, ConnectionOptions } from 'typeorm'
 import {postgres_config} from './ormconfig'
-import { Courses } from '../entity/Courses';
-import { Lessons } from '../entity/Lessons';
-
+import { tablestoinclude } from './tablestoinclude';
 
 const postgresDB = async function(){
 
@@ -18,7 +16,7 @@ const postgresDB = async function(){
             database: postgres_config.database,
             ssl: false,
             logging: true,
-            entities: [Courses, Lessons]
+            entities: tablestoinclude
         });        
         return connection;
     } catch (error) {

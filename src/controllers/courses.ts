@@ -17,10 +17,10 @@ export class CourseController{
         const cRepository = getRepository(Courses);
         
         const course  = await createQueryBuilder("Courses")
-                                      .innerJoinAndSelect("Courses.lessonss", "lessonss")
+                                      .leftJoinAndSelect("Courses.lessonss", "lessonss")
                                       .where("Courses.id = :id",{id: id})
                                       .getOne();
-
+        console.log(course);
         return course;       
         
     }
