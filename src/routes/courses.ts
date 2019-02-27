@@ -16,5 +16,12 @@ router
         ctx.body = course;
     })
 
+    .post('/create', async(ctx)=>{
+        let course = ctx.request.body.course
+        console.log(course);
+        ctx.status = 200
+        ctx.body = 'course created';
+    })
+
 export { router as courserouter }
 
