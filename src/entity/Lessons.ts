@@ -1,8 +1,8 @@
-import {BaseEntity,Column,Entity,Index,JoinColumn,JoinTable,ManyToMany,ManyToOne,OneToMany,OneToOne,PrimaryColumn,PrimaryGeneratedColumn,RelationId} from "typeorm";
+import {BaseEntity,Column,Entity,Index,JoinColumn,JoinTable,ManyToMany,ManyToOne,OneToMany,OneToOne,PrimaryColumn,PrimaryGeneratedColumn,RelationId, UpdateDateColumn} from "typeorm";
 import {Courses} from "./Courses";
 
 
-@Entity("Lessons",{schema:"public"})
+@Entity("Lessons")
 @Index("sortByUrl",["url",],{unique:true})
 export class Lessons {
 
@@ -56,7 +56,7 @@ export class Lessons {
         name:"pro"
         })
     pro:boolean | null;
-        
+            
 
     @Column("character varying",{ 
         nullable:false,
@@ -82,7 +82,7 @@ export class Lessons {
     createdAt:Date;
         
 
-    @Column("timestamp with time zone",{ 
+    @UpdateDateColumn({ 
         nullable:false,
         name:"updatedAt"
         })

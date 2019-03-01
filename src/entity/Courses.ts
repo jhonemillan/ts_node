@@ -1,4 +1,4 @@
-import {BaseEntity,Column,Entity,Index,JoinColumn,JoinTable,ManyToMany,ManyToOne,OneToMany,OneToOne,PrimaryColumn,PrimaryGeneratedColumn,RelationId} from "typeorm";
+import {BaseEntity,Column,Entity,Index,JoinColumn,JoinTable,ManyToMany,ManyToOne,OneToMany,OneToOne,PrimaryColumn,PrimaryGeneratedColumn,RelationId, UpdateDateColumn} from "typeorm";
 import {Lessons} from "./Lessons";
 
 //The name in @Entity decorator must be equal to name in DB, 
@@ -90,8 +90,8 @@ export class Courses {
     createdAt:Date;
         
 
-    @Column("timestamp with time zone",{ 
-        nullable:false,
+    @UpdateDateColumn({ 
+        nullable:false,        
         name:"updatedAt"
         })
     updatedAt:Date;
