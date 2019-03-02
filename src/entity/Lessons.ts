@@ -1,9 +1,8 @@
-import {BaseEntity,Column,Entity,Index,JoinColumn,JoinTable,ManyToMany,ManyToOne,OneToMany,OneToOne,PrimaryColumn,PrimaryGeneratedColumn,RelationId, UpdateDateColumn} from "typeorm";
+import {BaseEntity,Column,Entity,Index,JoinColumn,JoinTable,ManyToMany,ManyToOne,OneToMany,OneToOne,PrimaryColumn,PrimaryGeneratedColumn,RelationId, UpdateDateColumn, CreateDateColumn} from "typeorm";
 import {Courses} from "./Courses";
 
 
 @Entity("Lessons")
-@Index("sortByUrl",["url",],{unique:true})
 export class Lessons {
 
     @PrimaryGeneratedColumn({
@@ -75,8 +74,9 @@ export class Lessons {
     tags:string | null;
         
 
-    @Column("timestamp with time zone",{ 
+    @CreateDateColumn({ 
         nullable:false,
+        default: new Date(),
         name:"createdAt"
         })
     createdAt:Date;

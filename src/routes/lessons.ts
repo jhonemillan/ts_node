@@ -19,4 +19,19 @@ router
             }
         })
 
+        .post('/create/course/:id', async(ctx)=>{
+            let idCourse = ctx.params.id;
+            let lesson = ctx.request.body.lesson;
+            const confirmation = await LessonsController.SaveLesson(idCourse, lesson); 
+            
+            if (confirmation) {
+                ctx.status = 200;
+                ctx.body = confirmation;
+            }
+            else{
+                ctx.status = 400;
+                ctx.body = {status: "error"}
+            }
+        })
+
 export {router as lessonrouter};
